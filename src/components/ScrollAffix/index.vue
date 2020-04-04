@@ -26,7 +26,7 @@ export default {
   data () {
     return {
       affixStyle: {
-        position: 'absolute',
+        position: 'initial',
         top: 'initial'
       },
       stylePlaceHolder: {
