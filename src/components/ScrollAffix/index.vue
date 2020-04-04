@@ -1,10 +1,16 @@
 <template>
-  <div
-    ref="scroll-affix"
-    :style="affixStyle"
-    class="scroll-affix-container"
-  >
-    <slot/>
+  <div>
+    <div
+      v-if="showPlaceHolder"
+      :style="stylePlaceHolder"
+    ></div>
+    <div
+      ref="scroll-affix"
+      :style="affixStyle"
+      class="scroll-affix-container"
+    >
+      <slot/>
+    </div>
   </div>
 </template>
 
@@ -23,6 +29,10 @@ export default {
         position: 'absolute',
         top: 'initial'
       },
+      stylePlaceHolder: {
+
+      },
+      showPlaceHolder: false,
       instance: '',
       defaultInstancePosition: ''
     }
@@ -44,7 +54,9 @@ export default {
     },
     createAffix () {
       this.defaultInstancePosition = this.getInstanceRect().top
+
       this.beforeListener()
+      
       document.addEventListener('scroll', this.scrollListener)
     },
     setFixedForInstance () {
@@ -53,21 +65,39 @@ export default {
         top: `${this.offsetTop}px`
       }
     },
+    setPlaceHolder () {
+      this.showPlaceHolder = true
+
+      const instanceRect = this.getInstanceRect()
+      this.stylePlaceHolder = {
+        width: instanceRect.width,
+        height: instanceRect.height,
+      }
+    },
     beforeListener () {
       if (this.defaultInstancePosition < this.offsetTop) {
         this.setFixedForInstance()
+
+        this.setPlaceHolder()
       }
+
       this.defaultInstancePosition = this.getWindowScrollTop() + this.defaultInstancePosition
     },
     scrollListener () {
       const offsetTop = this.getInstanceRect().top
-      const windowScrollTop = this.getWindowScrollTop()
       if (offsetTop <= this.offsetTop) {
         this.setFixedForInstance()
+
+        this.setPlaceHolder()
       }
+
+      const windowScrollTop = this.getWindowScrollTop()
       const isArrivalDefault = (this.defaultInstancePosition - this.offsetTop) >= windowScrollTop
+
       if (isArrivalDefault && this.affixStyle.position === 'fixed') {
         this.affixStyle = {}
+        this.showPlaceHolder = false
+        this.stylePlaceHolder = {}
       }
     }
   },
