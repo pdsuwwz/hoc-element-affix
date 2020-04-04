@@ -4,6 +4,8 @@
 
 📌 将页面元素固定在可视范围内。
 
+**Live demo:** https://pdsuwwz.github.io/hoc-element-affix
+
 ## Environment Support
 
 * Vue 2.5.17
