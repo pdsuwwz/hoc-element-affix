@@ -66,6 +66,8 @@ export default {
       }
     },
     setPlaceHolder () {
+      this.showPlaceHolder = true
+
       const instanceRect = this.getInstanceRect()
       this.stylePlaceHolder = {
         width: instanceRect.width,
@@ -75,8 +77,6 @@ export default {
     beforeListener () {
       if (this.defaultInstancePosition < this.offsetTop) {
         this.setFixedForInstance()
-
-        this.showPlaceHolder = true
 
         this.setPlaceHolder()
       }
@@ -96,6 +96,7 @@ export default {
 
       if (isArrivalDefault && this.affixStyle.position === 'fixed') {
         this.affixStyle = {}
+        this.showPlaceHolder = false
         this.stylePlaceHolder = {}
       }
     }
