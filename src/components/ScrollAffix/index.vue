@@ -56,7 +56,7 @@ export default {
       this.defaultInstancePosition = this.getInstanceRect().top
 
       this.beforeListener()
-      
+
       document.addEventListener('scroll', this.scrollListener)
     },
     setFixedForInstance () {
@@ -70,8 +70,8 @@ export default {
 
       const instanceRect = this.getInstanceRect()
       this.stylePlaceHolder = {
-        width: instanceRect.width,
-        height: instanceRect.height,
+        width: `${instanceRect.width}px`,
+        height: `${instanceRect.height}px`
       }
     },
     beforeListener () {
