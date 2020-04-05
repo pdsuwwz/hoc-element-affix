@@ -31,12 +31,13 @@ Vue.use(HocElementAffix)
 
 | 字段 | 说明 | 类型 | 默认值 |
 | -------- | -------- | -------- | -------- |
-| offsetTop | 距离窗口顶部多少时开始固定 | Number | 0 |
+| offsetTop | （可选）距离窗口顶部多少时开始固定 | Number | 0 |
 
 ## Demo
 
 ```html
 <template>
+  <div style="height: 200px; border: 1px solid #000;">占位</div>
   <hoc-el-affix
     :offsetTop="10"
   >
@@ -44,12 +45,11 @@ Vue.use(HocElementAffix)
   </hoc-el-affix>
 </template>
 <style lang="scss" scoped>
-  .demo {
-    position: absolute;
-    width: 150px;
-    height: 300px;
-    border: 1px solid red;
-  }
+.demo {
+  width: 150px;
+  height: 300px;
+  border: 1px solid red;
+}
 </style>
 
 ```
