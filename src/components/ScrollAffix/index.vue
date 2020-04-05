@@ -29,11 +29,17 @@ export default {
         position: 'initial',
         top: 'initial'
       },
-      stylePlaceHolder: {
 
-      },
+      // 占位区域样式
+      stylePlaceHolder: {},
+
+      // 占位区域
       showPlaceHolder: false,
+
+      // 实例
       instance: '',
+
+      // 用于记录实例的初始状态下的位置
       defaultInstancePosition: ''
     }
   },
@@ -47,24 +53,27 @@ export default {
     getInstanceRect () {
       return this.instance.getBoundingClientRect()
     },
+
     getWindowScrollTop () {
       return window.pageYOffset ||
       document.documentElement.scrollTop ||
       document.body.scrollTop
     },
+
     createAffix () {
       this.defaultInstancePosition = this.getInstanceRect().top
-
       this.beforeListener()
-
       document.addEventListener('scroll', this.scrollListener)
     },
+
     setFixedForInstance () {
       this.affixStyle = {
         position: 'fixed',
         top: `${this.offsetTop}px`
       }
     },
+
+    // 用于设置实例在固定后的空白占位
     setPlaceHolder () {
       this.showPlaceHolder = true
 
@@ -75,9 +84,9 @@ export default {
       }
     },
     beforeListener () {
+      // 若下一次进入页面发现滚动条所处位置已经超过了实例，则立即固定
       if (this.defaultInstancePosition < this.offsetTop) {
         this.setFixedForInstance()
-
         this.setPlaceHolder()
       }
 
@@ -85,15 +94,16 @@ export default {
     },
     scrollListener () {
       const offsetTop = this.getInstanceRect().top
+      // 当实例距离顶部的距离刚好接近(0px+设置的 top 距离)时，则立即固定
       if (offsetTop <= this.offsetTop) {
         this.setFixedForInstance()
-
         this.setPlaceHolder()
       }
 
       const windowScrollTop = this.getWindowScrollTop()
       const isArrivalDefault = (this.defaultInstancePosition - this.offsetTop) >= windowScrollTop
 
+      // 当实例的初始位置减去设置的 top 距离刚好接近滚动条滚过的距离时（即一直在向上滚动）&& 实例已经在固定状态，则取消固定
       if (isArrivalDefault && this.affixStyle.position === 'fixed') {
         this.affixStyle = {}
         this.showPlaceHolder = false
