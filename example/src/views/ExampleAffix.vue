@@ -11,26 +11,31 @@
             v-if="index === 2"
           >
             <hoc-el-affix>
-              <div class="box">
-                吸顶
-              </div>
+              <template v-slot="{ affixed }">
+                <div class="box">
+                  <span style="font-size: 25px">{{ affixed ? '🍎' : '🍏' }}</span>
+                  吸顶【插槽版】
+                </div>
+              </template>
             </hoc-el-affix>
           </template>
           <template
-            v-else-if="index === 7"
+            v-else-if="index === 9"
           >
             <hoc-el-affix
               :offset-top="120"
+              @change="handleAffixed120"
             >
               <div class="box">
-                距离顶部120px时固定
+                <span style="font-size: 25px">{{ isAffixed120 ? '🌝' : '🌚' }}</span>
+                距离顶部120px时固定【回调版】
               </div>
             </hoc-el-affix>
           </template>
           <template
             v-else
           >
-            {{ index === 99 ? '到底了' : `占位符${index + 1}` }}
+            {{ index === 49 ? '到底了' : `占位符${index + 1}` }}
           </template>
         </div>
       </div>
@@ -40,7 +45,17 @@
 
 <script>
 export default {
-  name: 'ExampleAffix'
+  name: 'ExampleAffix',
+  data () {
+    return {
+      isAffixed120: false
+    }
+  },
+  methods: {
+    handleAffixed120 (affixed) {
+      this.isAffixed120 = affixed
+    }
+  }
 }
 </script>
 

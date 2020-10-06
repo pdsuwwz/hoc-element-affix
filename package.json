@@ -1,6 +1,6 @@
 {
   "name": "@hoc-element/affix",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/hoc-el-affix.js",
   "description": "📌 Affix 将页面元素固定在可视范围内。",
   "author": "Wisdom <pdsu.wwz@foxmail.com>",
