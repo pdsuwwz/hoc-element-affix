@@ -9,7 +9,11 @@
       :style="affixStyle"
       class="scroll-affix-container"
     >
-      <slot />
+      <slot
+        v-bind="{
+          affixed: getAffixed
+        }"
+      />
     </div>
   </div>
 </template>
@@ -43,6 +47,11 @@ export default {
       defaultInstancePosition: ''
     }
   },
+  computed: {
+    getAffixed () {
+      return this.affixStyle.position === 'fixed'
+    }
+  },
   mounted () {
     this.$nextTick(() => {
       this.instance = this.$refs['scroll-affix']
@@ -74,6 +83,7 @@ export default {
         position: 'fixed',
         top: `${this.offsetTop}px`
       }
+      this.$emit('change', true)
     },
 
     // 用于设置实例在固定后的空白占位
@@ -98,7 +108,7 @@ export default {
     scrollListener () {
       const offsetTop = this.getInstanceRect().top
       // 当实例距离顶部的距离刚好接近(0px+设置的 top 距离)时，则立即固定
-      if (offsetTop <= this.offsetTop) {
+      if (offsetTop < this.offsetTop) {
         this.setFixedForInstance()
         this.setPlaceHolder()
       }
@@ -111,6 +121,7 @@ export default {
         this.affixStyle = {}
         this.showPlaceHolder = false
         this.stylePlaceHolder = {}
+        this.$emit('change', false)
       }
     }
   }
