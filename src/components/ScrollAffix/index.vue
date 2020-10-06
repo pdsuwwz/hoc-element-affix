@@ -3,13 +3,13 @@
     <div
       v-if="showPlaceHolder"
       :style="stylePlaceHolder"
-    ></div>
+    />
     <div
       ref="scroll-affix"
       :style="affixStyle"
       class="scroll-affix-container"
     >
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
@@ -48,6 +48,9 @@ export default {
       this.instance = this.$refs['scroll-affix']
       this.createAffix()
     })
+  },
+  beforeDestroy () {
+    document.removeEventListener('scroll', this.scrollListener)
   },
   methods: {
     getInstanceRect () {
@@ -110,9 +113,6 @@ export default {
         this.stylePlaceHolder = {}
       }
     }
-  },
-  beforeDestroy () {
-    document.removeEventListener('scroll', this.scrollListener)
   }
 }
 </script>

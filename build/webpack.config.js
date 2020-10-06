@@ -5,14 +5,14 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const notifier = require('node-notifier')
 
 function resolve (dir) {
-  return path.join(__dirname, '.', dir)
+  return path.join(process.cwd(), dir)
 }
 
 module.exports = {
   mode: 'production',
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './lib'),
+    path: resolve('./lib'),
     publicPath: '/lib/',
     filename: 'hoc-el-affix.js',
     libraryTarget: 'umd'
@@ -69,7 +69,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            extends: resolve('babelrc.js')
+            extends: resolve('babel.config.js')
           }
         }
       },
