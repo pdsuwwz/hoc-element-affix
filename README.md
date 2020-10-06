@@ -8,7 +8,7 @@
 
 ## Environment Support
 
-* Vue 2.5.17
+* Vue 2.6.0+
 
 ## Install
 
