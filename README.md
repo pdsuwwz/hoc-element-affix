@@ -6,6 +6,10 @@
 
 **Live demo:** https://pdsuwwz.github.io/hoc-element-affix
 
+## Version
+
+* Vue 2.x 版本 ｜ [Vue 3.x 版本](https://github.com/pdsuwwz/hoc-element-affix)
+
 ## Environment Support
 
 * Vue 2.6.0+
