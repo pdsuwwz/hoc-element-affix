@@ -1,12 +1,13 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import router from './router.js'
-
-import HocElementAffix from 'source/main.js'
 import App from './App.vue'
 
-Vue.use(HocElementAffix)
+import HocElementAffix from 'root/lib/hoc-el-affix' // Switch to bundle lib
+// import HocElementAffix from '@/main.js'
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+import 'example/styles/variables.scss'
+
+createApp(App)
+  .use(router)
+  .use(HocElementAffix)
+  .mount('#app')

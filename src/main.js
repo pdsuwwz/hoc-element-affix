@@ -1,7 +1,7 @@
-import HocElAffix from './components/ScrollAffix'
+import HocElAffix from '@/components/ScrollAffix'
 
-const install = function (Vue, opts = {}) {
-  Vue.component('HocElAffix', HocElAffix)
+const install = function (app) {
+  app.component('HocElAffix', HocElAffix)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
