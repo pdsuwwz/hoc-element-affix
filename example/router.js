@@ -1,24 +1,15 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-const Layout = () => import('@/components/Layout')
 const importModule = (filePath) => {
-  return () => import(`@/${filePath}`)
+  return () => import(`example/${filePath}`)
 }
 
 const routes = [{
   path: '/',
-  component: Layout,
-  children: [
-    {
-      path: 'affix-example',
-      component: importModule('views/ExampleAffix')
-    }
-  ]
+  component: importModule('views/ExampleAffix')
 }]
 
-Vue.use(VueRouter)
-export default new VueRouter({
+export default createRouter({
   routes,
-  mode: 'history'
+  history: createWebHistory()
 })

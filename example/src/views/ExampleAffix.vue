@@ -1,5 +1,18 @@
 <template>
   <div class="box-container">
+    <div class="banner">
+      <div class="repo">
+        <p>📌 @hoc-element/affix</p><a
+          href="https://github.com/pdsuwwz/hoc-element-affix"
+          target="_blank"
+        >
+          <img
+            src="~example/assets/logo.svg"
+            alt="Logo"
+          >
+        </a>
+      </div>
+    </div>
     <div class="content">
       <div class="long-list">
         <div
@@ -11,9 +24,9 @@
             v-if="index === 2"
           >
             <hoc-el-affix>
-              <template v-slot="{ affixed }">
+              <template #default="{ affixed }">
                 <div class="box">
-                  <span style="font-size: 25px">{{ affixed ? '🍎' : '🍏' }}</span>
+                  <span style="font-size: 25px">{{ affixed ? '🥳' : '😀' }}</span>
                   吸顶【插槽版】
                 </div>
               </template>
@@ -27,15 +40,15 @@
               @change="handleAffixed120"
             >
               <div class="box">
-                <span style="font-size: 25px">{{ isAffixed120 ? '🌝' : '🌚' }}</span>
-                距离顶部120px时固定【回调版】
+                <span style="font-size: 25px">{{ isAffixed120 ? '🍎' : '🍏' }}</span>
+                距离顶部 120px 时固定【回调版】
               </div>
             </hoc-el-affix>
           </template>
           <template
             v-else
           >
-            {{ index === 49 ? '到底了' : `占位符${index + 1}` }}
+            {{ index === 49 ? '🎊 到底了' : `占位符${index + 1}` }}
           </template>
         </div>
       </div>
@@ -44,23 +57,51 @@
 </template>
 
 <script>
-export default {
+import { defineComponent, ref } from 'vue'
+
+export default defineComponent({
   name: 'ExampleAffix',
-  data () {
-    return {
-      isAffixed120: false
+  setup () {
+    const isAffixed120 = ref(false)
+
+    const handleAffixed120 = (affixed) => {
+      isAffixed120.value = affixed
     }
-  },
-  methods: {
-    handleAffixed120 (affixed) {
-      this.isAffixed120 = affixed
+
+    return {
+      isAffixed120,
+      handleAffixed120
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
 .box-container {
+  .banner {
+    padding: 30px 0;
+    background-color: #1C1C1C;
+    .repo {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+  @media screen and (min-width: 400px) {
+    .banner {
+      .repo {
+        width: 400px;
+      }
+    }
+  }
   .content {
     position: relative;
     width: 300px;
@@ -70,7 +111,7 @@ export default {
       width: 300px;
       height: 50px;
       line-height: 50px;
-      border: 1px solid #000;
+      border: 1px solid #FCFAF2;
     }
     .long-list {
       .long {
