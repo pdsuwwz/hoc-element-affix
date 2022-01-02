@@ -70,7 +70,12 @@ createApp(App)
 | affixed | （可选）实时的固定状态 | Boolean | false |
 
 
-## Demo
+## Example
 
 下面是比较全的例子，几乎囊括了 API 的所有用法，源码戳这： [Code](https://github.com/pdsuwwz/hoc-element-affix/tree/main/example/src/views/ExampleAffix.vue )
+
+
+## Deploy
+
+见仓库 [📥  hoc-element-affix-build](https://github.com/pdsuwwz/hoc-element-affix-build)
 
