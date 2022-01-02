@@ -1,7 +1,7 @@
 # @hoc-element/affix
 
 [![npm](https://img.shields.io/npm/v/@hoc-element/affix)](https://www.npmjs.com/package/@hoc-element/affix)
-
+[![license](https://img.shields.io/npm/l/@hoc-element/affix)](https://github.com/pdsuwwz/hoc-element-affix/blob/main/LICENSE)
 
 📌 基于 Webpack 5 构建的 Vue 3.x 固钉组件，用于将页面元素固定在可视范围内。
 
@@ -77,5 +77,5 @@ createApp(App)
 
 ## Deploy
 
-见仓库 [📥  hoc-element-affix-build](https://github.com/pdsuwwz/hoc-element-affix-build)
+见仓库 [📍  hoc-element-affix-build](https://github.com/pdsuwwz/hoc-element-affix-build)
 
