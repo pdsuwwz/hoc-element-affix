@@ -3,9 +3,14 @@
 [![npm](https://img.shields.io/npm/v/@hoc-element/affix)](https://www.npmjs.com/package/@hoc-element/affix)
 [![license](https://img.shields.io/npm/l/@hoc-element/affix)](https://github.com/pdsuwwz/hoc-element-affix/blob/main/LICENSE)
 
-📌 基于 Webpack 5 构建的 Vue 3.x 固钉组件，用于将页面元素固定在可视范围内。
+📌 基于 Webpack 5 构建的 Vue 3.x 固钉组件，用于将页面元素固定在可视范围内 **[Live demo](https://pdsuwwz.github.io/hoc-element-affix)** 
 
-**[Live demo](https://pdsuwwz.github.io/hoc-element-affix)** 
+
+## Try it Online ⚡️
+
+[StackBlitz](https://stackblitz.com/edit/github-vedset?file=src/views/ExampleAffix.vue)
+
+[![stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/github-vedset?file=src/views/ExampleAffix.vue)
 
 
 ## Version
