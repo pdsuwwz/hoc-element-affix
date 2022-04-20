@@ -27,7 +27,7 @@ specifiers:
   cross-env: ^7.0.3
   css-loader: ^6.6.0
   eslint: 8.13.0
-  eslint-config-standard: ^16.0.3
+  eslint-config-standard: 17.0.0
   eslint-friendly-formatter: ^4.0.1
   eslint-plugin-import: ^2.25.4
   eslint-plugin-jsx-a11y: ^6.5.1
@@ -76,7 +76,7 @@ devDependencies:
   cross-env: 7.0.3
   css-loader: 6.6.0_webpack@5.69.1
   eslint: 8.13.0
-  eslint-config-standard: 16.0.3_1b3c24ffc654d41ecb41902551e7b04a
+  eslint-config-standard: 17.0.0_ec3c438a85c5c14d7351fd98f173635a
   eslint-friendly-formatter: 4.0.1
   eslint-plugin-import: 2.25.4_eslint@8.13.0
   eslint-plugin-jsx-a11y: 6.5.1_eslint@8.13.0
@@ -2771,6 +2771,19 @@ packages:
       eslint: 8.13.0
       eslint-plugin-import: 2.25.4_eslint@8.13.0
       eslint-plugin-node: 11.1.0_eslint@8.13.0
+      eslint-plugin-promise: 5.2.0_eslint@8.13.0
+    dev: true
+
+  /eslint-config-standard/17.0.0_ec3c438a85c5c14d7351fd98f173635a:
+    resolution: {integrity: sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==}
+    peerDependencies:
+      eslint: ^8.0.1
+      eslint-plugin-import: ^2.25.2
+      eslint-plugin-n: ^15.0.0
+      eslint-plugin-promise: ^6.0.0
+    dependencies:
+      eslint: 8.13.0
+      eslint-plugin-import: 2.25.4_eslint@8.13.0
       eslint-plugin-promise: 5.2.0_eslint@8.13.0
     dev: true
 
