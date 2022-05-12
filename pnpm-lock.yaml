@@ -21,7 +21,7 @@ specifiers:
   '@babel/runtime': ^7.17.2
   '@babel/runtime-corejs2': ^7.17.2
   '@vue/compiler-sfc': ^3.2.31
-  '@vue/eslint-config-standard': ^6.1.0
+  '@vue/eslint-config-standard': 7.0.0
   babel-loader: ^8.2.3
   core-js: ^3.21.1
   cross-env: ^7.0.3
@@ -70,7 +70,7 @@ devDependencies:
   '@babel/runtime': 7.17.2
   '@babel/runtime-corejs2': 7.17.2
   '@vue/compiler-sfc': 3.2.31
-  '@vue/eslint-config-standard': 6.1.0_72369534f1ae70ecfa5f7f951c148738
+  '@vue/eslint-config-standard': 7.0.0_561656776f4f1b0d3c44abb1a7039f6d
   babel-loader: 8.2.3_9351ded4f79a023849d74b5df047d562
   core-js: 3.21.1
   cross-env: 7.0.3
@@ -422,6 +422,8 @@ packages:
     resolution: {integrity: sha512-7yJPvPV+ESz2IUTPbOL+YkIGyCqOyNIzdguKQuJGnH7bg1WTIifuM21YqokFt/THWh1AkCRn9IgoykTRCBVpzA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.0
     dev: true
 
   /@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/7.16.7_@babel+core@7.17.5:
@@ -1639,28 +1641,28 @@ packages:
     resolution: {integrity: sha512-iO/4FIezHKXhiDBdKySCvJVh8/mZPxHpiQrTy+PXVqJZgpTPTdHy4q8GXulaY+UKEagdkBb0onxNQZ0LNiqVhw==}
     dev: true
 
-  /@vue/eslint-config-standard/6.1.0_72369534f1ae70ecfa5f7f951c148738:
-    resolution: {integrity: sha512-9+hrEyflDzsGdlBDl9jPV5DIYUx1TOU5OSQqRDKCrNumrxRj5HRWKuk+ocXWnha6uoNRtLC24mY7d/MwqvBCNw==}
+  /@vue/eslint-config-standard/7.0.0_561656776f4f1b0d3c44abb1a7039f6d:
+    resolution: {integrity: sha512-1enxlDr6tfnINmmSz7YNcqdY0ywhwp8yzwvdMESnI3x/IjfWKXWjdglrCtyn48aTadZJAv5vVOk8bISnQPoFxQ==}
     peerDependencies:
-      '@vue/cli-service': ^3.0.0 || ^4.0.0 || ^5.0.0-0
-      eslint: ^7.12.1
-      eslint-plugin-import: ^2.22.1
-      eslint-plugin-node: ^11.1.0
-      eslint-plugin-promise: ^4.2.1 || ^5.0.0
-      eslint-plugin-vue: ^7.0.0
+      '@vue/cli-service': ^3.0.0 || ^4.0.0 || ^5.0.0
+      eslint: ^8.0.1
+      eslint-plugin-import: ^2.25.2
+      eslint-plugin-n: ^15.0.0
+      eslint-plugin-promise: ^6.0.0
+      eslint-plugin-vue: ^8.7.1
     peerDependenciesMeta:
       '@vue/cli-service':
         optional: true
     dependencies:
       eslint: 8.15.0
-      eslint-config-standard: 16.0.3_520e54517adc091f2d2d944f24b27016
+      eslint-config-standard: 17.0.0_14dd71b8a3d153fbb6d34742086afb7b
       eslint-import-resolver-node: 0.3.6
       eslint-import-resolver-webpack: 0.13.2_7ca1bbee865b31ac8d70a441e63dab12
       eslint-plugin-import: 2.25.4_eslint@8.15.0
-      eslint-plugin-node: 11.1.0_eslint@8.15.0
       eslint-plugin-promise: 5.2.0_eslint@8.15.0
       eslint-plugin-vue: 7.20.0_eslint@8.15.0
     transitivePeerDependencies:
+      - supports-color
       - webpack
     dev: true
 
@@ -2156,6 +2158,8 @@ packages:
       qs: 6.9.7
       raw-body: 2.4.3
       type-is: 1.6.18
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /bonjour/3.5.0:
@@ -2368,6 +2372,8 @@ packages:
       on-headers: 1.0.2
       safe-buffer: 5.1.2
       vary: 1.1.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /concat-map/0.0.1:
@@ -2498,12 +2504,22 @@ packages:
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.0.0
     dev: true
 
   /debug/3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.1.3
     dev: true
@@ -2766,20 +2782,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-standard/16.0.3_520e54517adc091f2d2d944f24b27016:
-    resolution: {integrity: sha512-x4fmJL5hGqNJKGHSjnLdgA6U6h1YW/G2dW9fA+cyVur4SK6lyue8+UgNKWlZtUDTXvgKDD/Oa3GQjmB5kjtVvg==}
-    peerDependencies:
-      eslint: ^7.12.1
-      eslint-plugin-import: ^2.22.1
-      eslint-plugin-node: ^11.1.0
-      eslint-plugin-promise: ^4.2.1 || ^5.0.0
-    dependencies:
-      eslint: 8.15.0
-      eslint-plugin-import: 2.25.4_eslint@8.15.0
-      eslint-plugin-node: 11.1.0_eslint@8.15.0
-      eslint-plugin-promise: 5.2.0_eslint@8.15.0
-    dev: true
-
   /eslint-config-standard/17.0.0_14dd71b8a3d153fbb6d34742086afb7b:
     resolution: {integrity: sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==}
     peerDependencies:
@@ -2810,6 +2812,8 @@ packages:
     dependencies:
       debug: 3.2.7
       resolve: 1.22.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /eslint-import-resolver-webpack/0.13.2_7ca1bbee865b31ac8d70a441e63dab12:
@@ -2832,14 +2836,33 @@ packages:
       resolve: 1.22.0
       semver: 5.7.1
       webpack: 5.69.1_webpack-cli@4.9.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
-  /eslint-module-utils/2.7.3:
+  /eslint-module-utils/2.7.3_a2e9ad6bb1d60475ebc0dfc5e76a2549:
     resolution: {integrity: sha512-088JEC7O3lDZM9xGe0RerkOMd0EjFl+Yvd1jPWIkMT5u3H9+HC34mWWPnqPrN13gieT9pBOO+Qt07Nb/6TresQ==}
     engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint-import-resolver-node: '*'
+      eslint-import-resolver-typescript: '*'
+      eslint-import-resolver-webpack: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+      eslint-import-resolver-node:
+        optional: true
+      eslint-import-resolver-typescript:
+        optional: true
+      eslint-import-resolver-webpack:
+        optional: true
     dependencies:
       debug: 3.2.7
+      eslint-import-resolver-node: 0.3.6
       find-up: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /eslint-plugin-es/3.0.1_eslint@8.15.0:
@@ -2857,7 +2880,11 @@ packages:
     resolution: {integrity: sha512-/KJBASVFxpu0xg1kIBn9AUa8hQVnszpwgE7Ld0lKAlx7Ie87yzEzCgSkekt+le/YVhiaosO4Y14GDAOc41nfxA==}
     engines: {node: '>=4'}
     peerDependencies:
+      '@typescript-eslint/parser': '*'
       eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
     dependencies:
       array-includes: 3.1.4
       array.prototype.flat: 1.2.5
@@ -2865,7 +2892,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.15.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.3
+      eslint-module-utils: 2.7.3_a2e9ad6bb1d60475ebc0dfc5e76a2549
       has: 1.0.3
       is-core-module: 2.8.1
       is-glob: 4.0.3
@@ -2873,6 +2900,10 @@ packages:
       object.values: 1.1.5
       resolve: 1.22.0
       tsconfig-paths: 3.12.0
+    transitivePeerDependencies:
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
     dev: true
 
   /eslint-plugin-jsx-a11y/6.5.1_eslint@8.15.0:
@@ -3162,6 +3193,8 @@ packages:
       type-is: 1.6.18
       utils-merge: 1.0.1
       vary: 1.1.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /extend/3.0.2:
@@ -3244,6 +3277,8 @@ packages:
       parseurl: 1.3.3
       statuses: 1.5.0
       unpipe: 1.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /find-cache-dir/3.3.2:
@@ -3488,8 +3523,6 @@ packages:
       param-case: 3.0.4
       relateurl: 0.2.7
       terser: 5.10.0
-    transitivePeerDependencies:
-      - acorn
     dev: true
 
   /html-webpack-plugin/5.5.0_webpack@5.69.1:
@@ -3504,8 +3537,6 @@ packages:
       pretty-error: 4.0.0
       tapable: 2.2.1
       webpack: 5.69.1_webpack-cli@4.9.2
-    transitivePeerDependencies:
-      - acorn
     dev: true
 
   /htmlparser2/6.1.0:
@@ -4400,6 +4431,8 @@ packages:
       async: 2.6.3
       debug: 3.2.7
       mkdirp: 0.5.5
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /postcss-modules-extract-imports/3.0.0_postcss@8.4.6:
@@ -4814,6 +4847,8 @@ packages:
       on-finished: 2.3.0
       range-parser: 1.2.1
       statuses: 1.5.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /serialize-javascript/6.0.0:
@@ -4833,6 +4868,8 @@ packages:
       http-errors: 1.6.3
       mime-types: 2.1.34
       parseurl: 1.3.3
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /serve-static/1.14.2:
@@ -4843,6 +4880,8 @@ packages:
       escape-html: 1.0.3
       parseurl: 1.3.3
       send: 0.17.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /setprototypeof/1.1.0:
@@ -5066,7 +5105,7 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /terser-webpack-plugin/5.3.1_acorn@8.7.0+webpack@5.69.1:
+  /terser-webpack-plugin/5.3.1_webpack@5.69.1:
     resolution: {integrity: sha512-GvlZdT6wPQKbDNW/GDQzZFg/j4vKU96yl2q6mcUkzKOgW4gwf1Z8cZToUCrz31XHlPWH8MVb1r2tFtdDtTGJ7g==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -5086,38 +5125,19 @@ packages:
       schema-utils: 3.1.1
       serialize-javascript: 6.0.0
       source-map: 0.6.1
-      terser: 5.10.0_acorn@8.7.0
+      terser: 5.10.0
       webpack: 5.69.1_webpack-cli@4.9.2
-    transitivePeerDependencies:
-      - acorn
     dev: true
 
   /terser/5.10.0:
     resolution: {integrity: sha512-AMmF99DMfEDiRJfxfY5jj5wNH/bYO09cniSqhfoyxc8sFoYIgkJy86G04UoZU5VjlpnplVu0K6Tx6E9b5+DlHA==}
     engines: {node: '>=10'}
     hasBin: true
-    peerDependencies:
-      acorn: ^8.5.0
     peerDependenciesMeta:
       acorn:
         optional: true
     dependencies:
-      commander: 2.20.3
-      source-map: 0.7.3
-      source-map-support: 0.5.21
-    dev: true
-
-  /terser/5.10.0_acorn@8.7.0:
-    resolution: {integrity: sha512-AMmF99DMfEDiRJfxfY5jj5wNH/bYO09cniSqhfoyxc8sFoYIgkJy86G04UoZU5VjlpnplVu0K6Tx6E9b5+DlHA==}
-    engines: {node: '>=10'}
-    hasBin: true
-    peerDependencies:
-      acorn: ^8.5.0
-    peerDependenciesMeta:
-      acorn:
-        optional: true
-    dependencies:
-      acorn: 8.7.0
+      acorn: 8.7.1
       commander: 2.20.3
       source-map: 0.7.3
       source-map-support: 0.5.21
@@ -5481,7 +5501,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.1.1
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.1_acorn@8.7.0+webpack@5.69.1
+      terser-webpack-plugin: 5.3.1_webpack@5.69.1
       watchpack: 2.3.1
       webpack-cli: 4.9.2_56d34dfb5427e6df45a27ae34f9e2cba
       webpack-sources: 3.2.3
