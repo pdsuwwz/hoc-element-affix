@@ -5,7 +5,7 @@
 
 📌 基于 Webpack 5 构建的 Vue 3.x 固钉组件，用于将页面元素固定在可视范围内
 
-**[Live demo](https://pdsuwwz.github.io/hoc-element-affix)** 
+**[💻 Live demo 在线体验](https://pdsuwwz.github.io/hoc-element-affix)** 
 
 
 ## Try it Online ⚡️
