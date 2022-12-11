@@ -22,7 +22,7 @@ specifiers:
   '@babel/runtime-corejs2': ^7.18.9
   '@vue/compiler-sfc': ^3.2.37
   '@vue/eslint-config-standard': ^8.0.0
-  babel-loader: ^8.2.5
+  babel-loader: ^9.0.0
   core-js: ^3.23.5
   cross-env: ^7.0.3
   css-loader: ^6.7.1
@@ -72,7 +72,7 @@ devDependencies:
   '@babel/runtime-corejs2': 7.18.9
   '@vue/compiler-sfc': 3.2.37
   '@vue/eslint-config-standard': 8.0.0_b4yehywn67gijk5lggoii7x5q4
-  babel-loader: 8.2.5_sqoqrlbh4fciq6urcohea2fb5a
+  babel-loader: 9.1.0_sqoqrlbh4fciq6urcohea2fb5a
   core-js: 3.23.5
   cross-env: 7.0.3
   css-loader: 6.7.1_webpack@5.73.0
@@ -2071,18 +2071,16 @@ packages:
     resolution: {integrity: sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==}
     dev: true
 
-  /babel-loader/8.2.5_sqoqrlbh4fciq6urcohea2fb5a:
-    resolution: {integrity: sha512-OSiFfH89LrEMiWd4pLNqGz4CwJDtbs2ZVc+iGu2HrkRfPxId9F2anQj38IxWpmRfsUY0aBZYi1EFcd3mhtRMLQ==}
-    engines: {node: '>= 8.9'}
+  /babel-loader/9.1.0_sqoqrlbh4fciq6urcohea2fb5a:
+    resolution: {integrity: sha512-Antt61KJPinUMwHwIIz9T5zfMgevnfZkEVWYDWlG888fgdvRRGD0JTuf/fFozQnfT+uq64sk1bmdHDy/mOEWnA==}
+    engines: {node: '>= 14.15.0'}
     peerDependencies:
-      '@babel/core': ^7.0.0
-      webpack: '>=2'
+      '@babel/core': ^7.12.0
+      webpack: '>=5'
     dependencies:
       '@babel/core': 7.18.9
       find-cache-dir: 3.3.2
-      loader-utils: 2.0.2
-      make-dir: 3.1.0
-      schema-utils: 2.7.1
+      schema-utils: 4.0.0
       webpack: 5.73.0_webpack-cli@5.0.0
     dev: true
 
@@ -4712,15 +4710,6 @@ packages:
       chokidar: 3.5.3
       immutable: 4.1.0
       source-map-js: 1.0.2
-    dev: true
-
-  /schema-utils/2.7.1:
-    resolution: {integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==}
-    engines: {node: '>= 8.9.0'}
-    dependencies:
-      '@types/json-schema': 7.0.11
-      ajv: 6.12.6
-      ajv-keywords: 3.5.2_ajv@6.12.6
     dev: true
 
   /schema-utils/3.1.1:
