@@ -44,7 +44,7 @@
     "babel-loader": "^9.0.0",
     "core-js": "^3.23.5",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.7.1",
+    "css-loader": "^7.0.0",
     "eslint": "8.30.0",
     "eslint-config-standard": "17.0.0",
     "eslint-friendly-formatter": "^4.0.1",
